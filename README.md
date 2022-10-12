@@ -41,3 +41,27 @@ Ejecutar los tests unitarios:
 ```bash
 php bin/phpunit
 ```
+
+Instalar Twig:
+
+```bash
+composer require symfony/twig-pack
+```
+
+Instalar Maker:
+
+```bash
+composer require symfony/maker-bundle --dev
+```
+
+Instalar Asset:
+
+```bash
+composer require symfony/asset
+```
+
+Crear controlador:
+
+```bash
+symfony console make:controller PostController
+```
