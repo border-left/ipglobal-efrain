@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - .:/var/www/symfony
+    expose:
+      - "9003"
+    ports:
+      - 8000:8000
