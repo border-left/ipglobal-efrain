@@ -29,3 +29,15 @@ Arrancar proyecto Symfony:
 ```bash
 symfony server:start
 ```
+
+Instalar PHPUnit:
+
+```bash
+composer require --dev symfony/test-pack
+```
+
+Ejecutar los tests unitarios:
+
+```bash
+php bin/phpunit
+```
