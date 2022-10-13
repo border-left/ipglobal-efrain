@@ -65,3 +65,57 @@ Crear controlador:
 ```bash
 symfony console make:controller PostController
 ```
+
+Instalar Security Bundle:
+
+```bash
+composer require symfony/security-bundle
+```
+
+Instalar Serializer:
+
+```bash
+composer require symfony/serializer-pack
+```
+
+Instalar FOSRestBundle:
+
+```bash
+composer require friendsofsymfony/rest-bundle
+```
+
+Crear controlador API:
+
+```bash
+symfony console make:controller Api\\PostController
+```
+
+Instalar ORM (Para generar entidades):
+
+```bash
+composer require orm
+```
+
+Instalar Validator:
+
+```bash
+composer require symfony/validator
+```
+
+Instalar Annotations:
+
+```bash
+composer require annotations
+```
+
+Crear Entidad Post:
+
+```bash
+php bin/console make:entity Post
+```
+
+Inslatar HTTP Client
+
+```bash
+composer require symfony/http-client
+```
