@@ -8,9 +8,7 @@ class JsonplaceholderService
 {
     const BASE_URL_JSONPLACEHOLDER = 'https://jsonplaceholder.typicode.com/posts';
 
-    private $client;
-
-    public function __construct(HttpClientInterface $client)
+    public function __construct(private HttpClientInterface $client)
     {
         $this->client = $client;
     }
