@@ -8,10 +8,7 @@ class JsonplaceholderService
 {
     const BASE_URL_JSONPLACEHOLDER = 'https://jsonplaceholder.typicode.com/posts';
 
-    public function __construct(private HttpClientInterface $client)
-    {
-        $this->client = $client;
-    }
+    public function __construct(private HttpClientInterface $client) {}
 
     /**
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
