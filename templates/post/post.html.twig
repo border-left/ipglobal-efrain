@@ -27,36 +27,82 @@
         </div>
     </header>
 
+    <a type="button" class="mb-1 mt-1 mr-1 btn btn-primary" href="{{ url('app_post_list') }}">Go to categories</a>
+
+    <hr class="opacity-0">
+
     <div class="row">
-        <div class="col-md-12">
-            <section class="card mb-4">
+
+        <div class="col-md-6">
+
+            <section class="card card-post mb-4">
                 <header class="card-header">
                     <div class="card-actions">
                         <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
                         <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                     </div>
 
-                    <h2 class="card-title">View post</h2>
+                    <h2 class="card-title">Post info</h2>
                 </header>
 
-                <div class="card-body mb-5">
-                    <div class="bounce-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>
-                </div>
+                <div class="card-body">
 
-                <div class="card-body d-none">
-                    <table class="table table-bordered table-striped mb-0" id="datatable-posts">
-                        <thead>
-                        <tr>
-                            <th>User id</th>
-                            <th>Post id</th>
-                            <th>Title</th>
-                            <th>Body</th>
-                        </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                    <div class="form-group row pb-3">
+                        <div>
+                            <label class="col-sm-3 control-label text-sm-end pt-2 required" for="product_title">Post id</label>
+                            <input type="text" class="form-control col-sm-9" value="{{ post.id }}" disabled readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group row pb-3">
+                        <div>
+                            <label class="col-sm-3 control-label text-sm-end pt-2 required" for="product_title">Post title</label>
+                            <input type="text" class="form-control col-sm-9" value="{{ post.title }}" disabled readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group row pb-3">
+                        <div>
+                            <label class="col-sm-3 control-label text-sm-end pt-2 required" for="product_title">Post body</label>
+                            <input type="text" class="form-control col-sm-9" value="{{ post.body }}" disabled readonly>
+                        </div>
+                    </div>
+
                 </div>
             </section>
+
+        </div>
+        <div class="col-md-6">
+
+            <section class="card card-post mb-4">
+                <header class="card-header">
+                    <div class="card-actions">
+                        <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                    </div>
+
+                    <h2 class="card-title">Author info</h2>
+                </header>
+
+                <div class="card-body">
+
+                    <div class="form-group row pb-3">
+                        <div>
+                            <label class="col-sm-3 control-label text-sm-end pt-2 required" for="product_title">Author id</label>
+                            <input type="text" class="form-control col-sm-9" value="{{ post.author.id }}" disabled readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group row pb-3">
+                        <div>
+                            <label class="col-sm-3 control-label text-sm-end pt-2 required" for="product_title">Author name</label>
+                            <input type="text" class="form-control col-sm-9" value="{{ post.author.name }}" disabled readonly>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
         </div>
     </div>
     <!-- end: page -->
@@ -86,6 +132,4 @@
     <script src="{{ asset('/js/theme.init.js') }}"></script>
 
     <script src="{{ asset('/js/examples/examples.datatables.default.js') }}"></script>
-    <script src="{{ asset('/js/examples/examples.datatables.row.with.details.js') }}"></script>
-    <script src="{{ asset('/js/examples/examples.datatables.tabletools.js') }}"></script>
 {% endblock javascripts %}

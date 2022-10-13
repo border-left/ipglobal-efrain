@@ -27,42 +27,54 @@
             </div>
         </header>
 
-        <div class="row">
-            <div class="col-md-12">
-                <section class="card mb-4">
-                    <header class="card-header">
-                        <div class="card-actions">
-                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
-                        </div>
-
-                        <h2 class="card-title">Post List</h2>
-                    </header>
-
-                    <div class="card-body mb-5">
-                        <div class="bounce-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>
+    <div class="row">
+        <div class="col-md-12">
+            <section class="card mb-4">
+                <header class="card-header">
+                    <div class="card-actions">
+                        <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                     </div>
 
-                    <div class="card-body d-none">
-                        <table class="table table-bordered table-striped mb-0" id="datatable-posts">
-                            <thead>
-                                <tr>
-                                    <th class="sorting_disabled">View post</th>
-                                    <th>User id</th>
-                                    <th>Post id</th>
-                                    <th>Title</th>
-                                    <th>Body</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
+                    <h2 class="card-title">Posts list</h2>
+                </header>
+
+                <div class="card-body">
+
+                    <table class="table table-bordered table-striped mb-0" id="datatable-default">
+
+                        <thead>
+                        <tr>
+                            <th class="sorting_disabled">View</th>
+                            <th>User id</th>
+                            <th>User name</th>
+                            <th>Post id</th>
+                            <th>Title</th>
+                            <th>Body</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for post in posts %}
+                            <tr>
+                                <td class="text-center">
+                                    <a href="{{ url('app_post_view', {'id': post.id}) }}" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                                </td>
+                                <td>{{ post.author.id }}</td>
+                                <td>{{ post.author.name }}</td>
+                                <td>{{ post.id }}</td>
+                                <td>{{ post.title }}</td>
+                                <td>{{ post.body|slice(0, 50) }}...</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
-        <!-- end: page -->
+    </div>
+    <!-- end: page -->
     </section>
-</div>
+    </div>
 
 {% endblock %}
 
@@ -87,6 +99,4 @@
     <script src="{{ asset('/js/theme.init.js') }}"></script>
 
     <script src="{{ asset('/js/examples/examples.datatables.default.js') }}"></script>
-    <script src="{{ asset('/js/examples/examples.datatables.row.with.details.js') }}"></script>
-    <script src="{{ asset('/js/examples/examples.datatables.tabletools.js') }}"></script>
 {% endblock javascripts %}

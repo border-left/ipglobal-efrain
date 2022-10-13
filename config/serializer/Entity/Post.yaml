@@ -1,0 +1,10 @@
+App\Entity\Post:
+  attributes:
+    id:
+      groups: ['public']
+    title:
+      groups: ['public']
+    body:
+      groups: ['public']
+    author:
+      groups: ['public']
